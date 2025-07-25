@@ -1,0 +1,43 @@
+
+<!-- Optional Chart -->
+<app-pmr-chart></app-pmr-chart>
+
+<!-- Order Table Heading -->
+<h4 class="mb-3 mt-4 px-3">Order Details</h4>
+
+<!-- Grid/Table -->
+<div class="container">
+  <!-- Header Row -->
+  <div class="row fw-bold border-bottom py-2 bg-secondary text-white">
+    <div class="col">Order ID</div>
+    <div class="col">Order Type</div>
+    <div class="col">Status</div>
+    <div class="col">Comment</div>
+    <div class="col">User</div>
+  </div>
+
+  <!-- Data Rows -->
+  <div *ngFor="let order of orders" class="row py-2 border-bottom align-items-center">
+    <div class="col">{{ order.orderId }}</div>
+    <div class="col">{{ order.orderType }}</div>
+
+    <!-- Status Link (calls function) -->
+    <div class="col">
+      <a href="javascript:void(0)"
+         (click)="openLabelingPage(order)"
+         target="_blank"
+         [ngClass]="{
+           'text-warning': order.orderStatus === 'Pending',
+           'text-primary': order.orderStatus === 'In Progress',
+           'text-success': order.orderStatus === 'Completed',
+           'text-danger': order.orderStatus === 'Rejected'
+         }"
+         class="fw-bold text-decoration-none">
+        {{ order.orderStatus }}
+      </a>
+    </div>
+
+    <div class="col">{{ order.comment }}</div>
+    <div class="col">{{ order.user }}</div>
+  </div>
+</div>

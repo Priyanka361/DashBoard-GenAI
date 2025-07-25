@@ -1,0 +1,26 @@
+[
+  {
+    "orderId": "ORD001",
+    "orderType": "New",
+    "orderStatus": "Pending",
+    "comment": "Label object in image",
+    "user": "admin",
+    "imageUrl": "assets/images/sample1.jpg"
+  },
+  {
+    "orderId": "ORD002",
+    "orderType": "Update",
+    "orderStatus": "In Progress",
+    "comment": "Work started",
+    "user": "user1",
+    "imageUrl": "assets/images/sample2.jpg"
+  },
+  {
+    "orderId": "ORD003",
+    "orderType": "Cancel",
+    "orderStatus": "Completed",
+    "comment": "Labeled successfully",
+    "user": "user2",
+    "imageUrl": "assets/images/sample3.jpg"
+  }
+]

@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+/* Global Theme Overrides */
+
+/* Purple color for buttons */
+.btn,
+.btn-primary,
+.btn-outline-primary {
+  background-color: purple !important;
+  border-color: purple !important;
+  color: white !important;
+}
+
+/* Outline button hover/focus */
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: white !important;
+  color: purple !important;
+}
+
+/* Header styling */
+header {
+  background-color: purple !important;
+  color: white !important;
+}
+
+/* Optional: Purple border for card/header accents */
+.card-header,
+.card-title {
+  border-bottom: 2px solid purple;
+}
