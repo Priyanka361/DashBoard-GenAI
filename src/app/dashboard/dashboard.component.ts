@@ -21,7 +21,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.orderService.getLabelOrders().subscribe({
       next: (data) => {
-        console.log("Fetched Orders:", data);
         this.orders = data;
       },
       error: (err) => {
@@ -29,23 +28,17 @@ export class DashboardComponent implements OnInit {
       }
     });
 
-    // this.username = this.auth.getUsername();
   }
 
-  // logout(): void {
-  //   this.auth.logout();
-  //   this.router.navigate(['/login']);
-  // }
-
   openLabelingPage(order: Order): void {
-    console.log("Order object:", order);
     const url = this.router.serializeUrl(
       this.router.createUrlTree(['/labeling'], {
         queryParams: {
           orderId: order.orderId,
           image: order.imageUrl,
           status: order.orderStatus,
-          comment: order.comment
+          comment: order.comment,
+          accuracy: order.accuracy
         }
       })
     );

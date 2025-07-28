@@ -9,6 +9,7 @@ export interface Order {
   comment: string;
   user: string;
   imageUrl: string;
+  accuracy: string;
 }
 @Injectable({
   providedIn: 'root'

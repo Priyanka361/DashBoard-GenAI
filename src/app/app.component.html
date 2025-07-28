@@ -1,8 +1,18 @@
-<header class="d-flex justify-content-between align-items-center p-3 text-white" style="background-color: purple;">
+<header class="d-flex justify-content-between align-items-center px-5 py-3" >
+  <img class="white-logo" src="assets/images/Mobily_Logo.svg" alt="Mobily Logo" style="width: 45px; height: auto;" />
+
+
   <div class="fw-bold fs-4">PMR Dashboard</div>
-  <div class="d-flex align-items-center">
-    <span class="me-3">👤 {{ username }}</span>
-    <button class="btn btn-outline-light btn-sm" (click)="logout()">Logout</button>
+     
+
+  <!-- Keep this div in DOM always -->
+  <div class="d-flex align-items-center" style="min-width: 160px;">
+    <ng-container *ngIf="isLoggedIn">
+      <span class="me-3">{{ username }}</span>
+      <i class="bi bi-person fs-4 me-2"></i>
+      <button class="btn join-btn fw-bold text-white" (click)="logout()">Logout</button>
+    </ng-container>
   </div>
 </header>
+
 <router-outlet></router-outlet>

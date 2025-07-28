@@ -1,13 +1,18 @@
-canvas {
+.canvas {
   pointer-events: none;
 }
 
-img {
+.img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-canvas {
+.canvas {
   pointer-events: auto; /* Enable drawing */
+}
+.text-danger {
+  color: red;
+  font-weight: 500;
+  font-size: 14px;
 }

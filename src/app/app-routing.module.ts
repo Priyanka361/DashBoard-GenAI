@@ -7,11 +7,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LabelingComponent } from './labeling/labeling.component';
 
 const routes: Routes = [
-   { path: '', redirectTo: 'login', pathMatch: 'full' },
+   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'labeling', component: LabelingComponent, canActivate: [AuthGuard] }
+  { path: 'labeling', component: LabelingComponent }
 ];
 
 @NgModule({

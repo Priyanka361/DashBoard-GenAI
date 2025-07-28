@@ -5,6 +5,7 @@
     "orderStatus": "Pending",
     "comment": "Label object in image",
     "user": "admin",
+    "accuracy": "90:00%",
     "imageUrl": "assets/images/sample1.jpg"
   },
   {
@@ -13,6 +14,7 @@
     "orderStatus": "In Progress",
     "comment": "Work started",
     "user": "user1",
+    "accuracy": "85:00%",
     "imageUrl": "assets/images/sample2.jpg"
   },
   {
@@ -21,6 +23,7 @@
     "orderStatus": "Completed",
     "comment": "Labeled successfully",
     "user": "user2",
+    "accuracy": "100:00%",
     "imageUrl": "assets/images/sample3.jpg"
   }
 ]

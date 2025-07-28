@@ -13,11 +13,13 @@ export class LabelingComponent implements OnInit {
   orderId = '';
   status = '';
   comment = '';
+  accuracy = '';
   imageSrc: string = '';
   uploadedImageSrc: string = '';
   labelList = ['Person', 'Car', 'Animal', 'Tree'];
   isEditable = false;
   isShowLabelDropdown = false;
+  showLabelWarning = false;
 
   selectedLabel = '';
   newImageFile: File | null = null;
@@ -31,12 +33,15 @@ export class LabelingComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
+      console.log(params);
+      
       this.orderId = params['orderId'];
       this.status = params['status'];
       this.comment = params['comment'];
       this.imageSrc = params['image'];
+      this.accuracy = params['accuracy'];
       this.isEditable = ['Pending', 'In Progress'].includes(this.status);
-      this.isShowLabelDropdown = ['Pending', 'In Progress'].includes(this.status);
+      this.isShowLabelDropdown = ['In Progress'].includes(this.status);
     });
   }
 
@@ -57,14 +62,22 @@ export class LabelingComponent implements OnInit {
     };
   }
 
-  startDraw(event: MouseEvent) {
-    if (!this.isEditable) return;
+startDraw(event: MouseEvent) {
+  if (!this.isEditable) return;
 
-    this.isDrawing = true;
-    const rect = this.canvasRef.nativeElement.getBoundingClientRect();
-    this.startX = event.clientX - rect.left;
-    this.startY = event.clientY - rect.top;
+  if (!this.selectedLabel) {
+    this.showLabelWarning = true;
+    return;
   }
+
+  this.showLabelWarning = false;
+  this.isDrawing = true;
+
+  const rect = this.canvasRef.nativeElement.getBoundingClientRect();
+  this.startX = event.clientX - rect.left;
+  this.startY = event.clientY - rect.top;
+}
+
 
   draw(event: MouseEvent) {
     if (!this.isDrawing) return;
