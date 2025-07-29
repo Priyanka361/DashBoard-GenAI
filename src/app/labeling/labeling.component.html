@@ -1,16 +1,27 @@
 <div class="container-fluid px-5">
   <h2 class="mt-4 mb-3 fw-bold text-primary">Image Labeling Dashboard</h2>
 
-  <div class="card p-3 mb-3 w-100" style="max-width: 800px;">
-    <strong>Order ID:</strong> {{ orderId }} <br>
-    <strong>Status:</strong> {{ status }} <br>
-    <strong>Comment:</strong> {{ comment }} <br>
-    <strong>Accuracy:</strong> {{ accuracy }}
+ <div class="card p-3 mb-3 w-100" style="max-width: 800px;">
+  <div class="row">
+    <div class="col-md-6 mb-2">
+      <strong>Order ID:</strong> {{ orderId }}
+    </div>
+    <div class="col-md-6 mb-2">
+      <strong>Status:</strong> {{ status }}
+    </div>
+    <div class="col-md-6 mb-2">
+      <strong>Comment:</strong> {{ comment }}
+    </div>
+    <div class="col-md-6 mb-2">
+      <strong>Accuracy:</strong> {{ accuracy }}
+    </div>
   </div>
+</div>
+
 
   <!-- Label Dropdown (Left Aligned) -->
 <div class="mb-3 w-100" style="max-width: 800px;" *ngIf="isShowLabelDropdown">
-  <label class="form-label">Select Label</label>
+  <label class="form-label"><strong> Select Label </strong></label>
   <select [(ngModel)]="selectedLabel"
           (change)="showLabelWarning = false"
           class="form-select w-25">
