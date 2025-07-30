@@ -1,11 +1,27 @@
-<div class="card p-3 shadow-sm mt-4">
-  <div class="chart-container">
-  <h4 class="mb-3">Order Status by Month</h4>
-  <canvas baseChart
-          [data]="barChartData"
-          [options]="barChartOptions"
-          chartType="bar"
-         >
-  </canvas>
-</div>
+<div class="container-fluid mt-2">
+  <div class="row">
+    <!-- Bar Chart -->
+    <div class="col-lg-8 col-md-10">
+      <div class="card p-2 shadow-sm h-80">
+        <h4 class="mb-3">Order Status by Month</h4>
+        <canvas baseChart
+                [data]="barChartData"
+                [options]="barChartOptions"
+                [type]="barChartType">
+        </canvas>
+      </div>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="col-lg-4 col-md-12 ">
+      <div class="card p-3 shadow-sm h-100">
+        <h4 class="mb-3">Overall Order Status</h4>
+        <canvas baseChart
+                [data]="pieChartData"
+                [options]="pieChartOptions"
+                [type]="pieChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
 </div>

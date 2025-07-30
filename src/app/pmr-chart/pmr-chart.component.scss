@@ -4,3 +4,12 @@
   margin-left: 0;     /* Removes left margin */
   margin-right: auto; /* Keeps chart aligned to the left */
 }
+.card {
+  height: 100%;
+}
+
+canvas {
+  width: 92% !important;
+  height: auto !important;
+  max-height: autopx; /* Optional limit */
+}

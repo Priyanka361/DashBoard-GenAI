@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
           orderId: order.orderId,
           image: order.imageUrl,
           status: order.orderStatus,
-          comment: order.comment,
+          label: order.label,
           accuracy: order.accuracy
         }
       })

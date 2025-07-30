@@ -8,8 +8,9 @@ export interface Order {
   orderStatus: string;
   comment: string;
   user: string;
-  imageUrl: string;
+  imageUrl: any;
   accuracy: string;
+  label: string
 }
 @Injectable({
   providedIn: 'root'

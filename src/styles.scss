@@ -9,7 +9,11 @@
   border-color: rgb(41, 160, 239)!important;
   color: white !important;
 }
-
+.btn-danger {
+  background-color: #ea3434 !important; /* Pure Red */
+  border-color: #de2e2e !important;
+  color: white !important;
+}
 /* Outline button hover/focus */
 .btn-outline-primary:hover,
 .btn-outline-primary:focus {
@@ -28,3 +32,11 @@ header {
 .card-title {
   border-bottom: 2px solid purple;
 }
+
+html, body {
+  width: 1270px;
+  font-size: 10px;   /* Standard size */
+  line-height: 1.5;
+  zoom: 100%;       /* Ensure no zoom scaling */
+}
+
